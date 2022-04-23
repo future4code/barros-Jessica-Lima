@@ -175,19 +175,11 @@ checaIgualdadeDesconsiderandoCase()
 */
 // EXERCÍCIO 13
 /*
-- Para pessoas com menos de 20 anos, ou exatamente 20 anos, deve ser renovada de 5 em 5 anos 
-(se for exatamente 5 anos, deve ser renovada).
-
-- Para pessoas entre 20 e 50 anos, ou exatamente 50, deve ser renovada de 10 em 10 anos 
-(se for exatamente 10 anos, deve ser renovada).
-
-- Para pessoas acima dos 50 anos, deve ser renovada de 15 em 15 anos */
-/*
   let anoAtual = Number (prompt("Digite o ano atual:"))
   let anoNascimento = Number (prompt("Digite o seu ano de nascimento:"))
   let anoIdentidade = Number (prompt("Digite o ano em que sua carteita de identidade foi emitida"))
   let idade = anoAtual - anoNascimento
-
+*/
 function checaRenovacaoRG(anoAtual, anoNascimento, anoIdentidade, idade) {
   
   //const renovar20 = 5
@@ -210,7 +202,7 @@ function checaRenovacaoRG(anoAtual, anoNascimento, anoIdentidade, idade) {
   //console.log(exemplo3)
 }
 checaRenovacaoRG
-*/
+
 // EXERCÍCIO 14
 // **São bissextos** todos os anos múltiplos de 400**.**
 // **São bissextos** todos os múltiplos de 4, exceto se for múltiplo de 100 mas não de 400**.**
