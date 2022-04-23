@@ -17,40 +17,44 @@ function imprimeMensagem() {
 // EXERCÍCIOS PARA FAZER ------------------------------------------------------------------
 
 // EXERCÍCIO 01
-function calculaAreaRetangulo() {
+function calculaAreaRetangulo(altura, largura) {
   
-  let altura = Number(prompt("Digite a altura:"))
-  let largura = Number(prompt("Digite a largura:"))
+  altura = Number(prompt("Digite a altura:"))
+  largura = Number(prompt("Digite a largura:"))
 
-  console.log("A área do retângulo é:", altura * largura)
-
+  console.log(altura * largura)
 }
+calculaAreaRetangulo
 
 // EXERCÍCIO 02
-function imprimeIdade() {
-  let anoAtual = Number(prompt("Digite o ano atual:"))
-  let anoNascimento = Number (prompt("Digite o ano de nascimento:"))
+function imprimeIdade(anoAtual, anoNascimento) {
+  anoAtual = Number(prompt("Digite o ano atual:"))
+  anoNascimento = Number (prompt("Digite o ano de nascimento:"))
 
-  console.log("A sua idade é:", anoAtual - anoNascimento)
+  console.log(anoAtual - anoNascimento)
 }
+imprimeIdade
 
 // EXERCÍCIO 03
-function calculaIMC(peso, altura) {
-  peso = Number (prompt("Digite o seu peso"))
-  altura = Number (prompt("Digite a sua altura:"))
-  let imc = peso / (altura * altura)
 
-  console.log("O seu IMC é:", imc)  // era pra aparecer o pop up nesse?
+let peso = Number(prompt("Digite o seu peso"))
+let altura = Number (prompt("Digite a sua altura:"))
+
+function calculaIMC(peso, altura, ) {  
+  
+  return peso / (altura*altura)
 }
+calculaIMC
 
 // EXERCÍCIO 04
-function imprimeInformacoesUsuario() {
-  let nome = prompt("Qual é o seu nome?")
-  let idade = prompt("Quantos anos você tem?")
-  let email = prompt("Digite o seu e-maiil:")
+function imprimeInformacoesUsuario(nome, idade, email) {
+  nome = prompt("Qual é o seu nome?")
+  idade = prompt("Quantos anos você tem?")
+  email = prompt("Digite o seu e-maiil:")
 
-  console.log("Meu nome é", nome, ", tenho", idade, "anos", ", e o meu e-mail é", email)
+  console.log("Meu nome é " + nome + ", tenho " + idade + " anos, e o meu email é " + email + ".")
 }
+imprimeInformacoesUsuario
 
 // EXERCÍCIO 05
 function imprimeTresCoresFavoritas() {
@@ -63,42 +67,60 @@ function imprimeTresCoresFavoritas() {
 }
 
 // EXERCÍCIO 06
-function retornaStringEmMaiuscula(string) {
-  string = prompt("Digite uma palavra:")
 
-  console.log(string.toUpperCase())
-}
+string = prompt("Digite uma palavra:")
+
+function retornaStringEmMaiuscula(string) {
+
+  return string.toLocaleUpperCase()
+}  
+retornaStringEmMaiuscula
 
 // EXERCÍCIO 07
-function calculaIngressosEspetaculo(custo, valorIngresso) {
-  custo = prompt("Digite o valor do espetáculo:")
-  valorIngresso = prompt("Digite o valor do ingresso:")
 
-  console.log( custo/valorIngresso, " ingressos precisam ser vendidos")
+let custo = Number (prompt("custo:"))
+let valorIngresso = Number (prompt("valor de cada ingresso:"))
+
+function calculaIngressosEspetaculo(custo, valorIngresso) {
+
+  return custo/valorIngresso
 }
+calculaIngressosEspetaculo()
 
 // EXERCÍCIO 08
-function checaStringsMesmoTamanho(string1, string2) {
-    string1 = "cafe"
-    string2 = "cafe"
 
-    let tamanho = (string1 === string2)
-    console.log(tamanho)
+let string1 = prompt("Digite uma palavra")
+let string2 = prompt("Digite uma palavra:")
+
+function checaStringsMesmoTamanho(string1, string2) {
+
+    return string1.length === string2.length
 }
+checaStringsMesmoTamanho
 
 // EXERCÍCIO 09
-function retornaPrimeiroElemento(array) {
-  array = ["Laranja", "Banana", "Maçã"]
 
-  console.log(array[0])
+
+
+function retornaPrimeiroElemento() {
+  let array =[]
+  array[0] = prompt("Digite uma palavra")
+  array[1] = prompt("Digite uma palavra")
+  array[2] = prompt("Digite uma palavra")
+  console.log(array[0]) 
 }
+retornaPrimeiroElemento()
 
 // EXERCÍCIO 10
-function retornaUltimoElemento(array) {
-  array = ["Laranja", "Banana", "Maçã"]
-  console.log(array[array.length - 1])
+function retornaUltimoElemento(array, array1) {
 
+  array = [1, 2, 3, 4, 5]
+  array1 = ["Laranja", "Banana", "Maçã"]
+
+  console.log(array[array.length - 1])
+  console.log(array1[array1.length - 1])
 }
+retornaPrimeiroElemento
 
 // EXERCÍCIO 11
 function trocaPrimeiroEUltimo(array) {
@@ -107,18 +129,19 @@ function trocaPrimeiroEUltimo(array) {
   array.push(array.splice(0, 1, 2, 3)[0])
   array.unshift(2)[0]
 
-  console.log(array) //NÃO TA CERTO ESSEEEEEEEEEEEEEEEEEEEEEE
+  console.log(array) //NÃO TA CERTO ESSEEEEEEEEEEEEEEEEEEEEEE (usar splice)
 }
 
 // EXERCÍCIO 12
-function checaIgualdadeDesconsiderandoCase(string1, string2) {
-  string1 = prompt("Digite uma palavra")
-  string2 = prompt("Digite outra palavra")
+
+function checaIgualdadeDesconsiderandoCase(stringy, stringx) {
+  stringy = prompt("Digite uma palavra")
+  stringx = prompt("Digite outra palavra")
   
-  let comparacao = (string1 === string2)
-  console.log(comparacao)  
+  console.log(stringy === stringx)
 
 }
+checaIgualdadeDesconsiderandoCase
 
 // EXERCÍCIO 13
 /*
@@ -130,37 +153,46 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
 
 - Para pessoas acima dos 50 anos, deve ser renovada de 15 em 15 anos */
 
-function checaRenovacaoRG() {
   let anoAtual = Number (prompt("Digite o ano atual:"))
   let anoNascimento = Number (prompt("Digite o seu ano de nascimento:"))
   let anoIdentidade = Number (prompt("Digite o ano em que sua carteita de identidade foi emitida"))
-  const renovar20 = 5
-  const renovar2050 = 10
-  const renovar50 = 15
-
   let idade = anoAtual - anoNascimento
 
-  let exemplo1 = (idade <= 20) && ((anoIdentidade+renovar20) <= anoAtual)
-  console.log(exemplo1)  
+function checaRenovacaoRG(anoAtual, anoNascimento, anoIdentidade, idade) {
+  
+  //const renovar20 = 5
+  //const renovar2050 = 10
+  //const renovar50 = 15
 
-  let exemplo2 = (idade > 20 && idade <= 50) && ((anoIdentidade+renovar2050) <= anoAtual)
-  console.log (exemplo2)
+  return (idade <= 20) && ((anoIdentidade+5) <= anoAtual) || (idade > 20 && idade <= 50) && ((anoIdentidade+10) <= anoAtual) || (idade > 50) && ((anoIdentidade+15) <= anoAtual)
+  //console.log((idade <= 20) && ((anoIdentidade+5) <= anoAtual))
+  //let exemplo1 = (idade <= 20) && ((anoIdentidade+5) <= anoAtual)
+  //console.log(exemplo1)  
 
-  let exemplo3 = (idade > 50) && ((anoIdentidade+renovar50) <= anoAtual)
-  console.log(exemplo3)
+  //return (idade > 20 && idade <= 50) && ((anoIdentidade+10) <= anoAtual)
+  //console.log((idade > 20 && idade <= 50) && ((anoIdentidade+10) <= anoAtual))
+  //let exemplo2 = (idade > 20 && idade <= 50) && ((anoIdentidade+10) <= anoAtual)
+  //console.log (exemplo2)
+
+  //return (idade > 50) && ((anoIdentidade+15) <= anoAtual)
+  //console.log((idade > 50) && ((anoIdentidade+15) <= anoAtual))
+  //let exemplo3 = (idade > 50) && ((anoIdentidade+15) <= anoAtual)
+  //console.log(exemplo3)
 }
+checaRenovacaoRG
 
 // EXERCÍCIO 14
 // **São bissextos** todos os anos múltiplos de 400**.**
 // **São bissextos** todos os múltiplos de 4, exceto se for múltiplo de 100 mas não de 400**.**
 // **Não são bissextos** todos os demais anos.
 
-function checaAnoBissexto(ano) {
-  ano = Number (prompt("Digite um ano:"))
+let ano = Number (prompt("Digite um ano:"))
 
-  let anoBi= ((ano % 4 == 0) && (ano % 100 != 0)) || (ano % 400 == 0) 
-  console.log(anoBi)
+function checaAnoBissexto(ano) {
+  
+  return ((ano % 4 == 0) && (ano % 100 != 0)) || (ano % 400 == 0)
 }
+checaAnoBissexto
 
 // EXERCÍCIO 15
 function checaValidadeInscricaoLabenu() {
