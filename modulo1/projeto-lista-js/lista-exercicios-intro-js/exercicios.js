@@ -97,6 +97,7 @@ function calculaIngressosEspetaculo(custo, valorIngresso) {
 }
 calculaIngressosEspetaculo()
 */
+
 // EXERCÍCIO 08
 /*
 let string1 = prompt("Digite uma palavra")
@@ -108,6 +109,7 @@ function checaStringsMesmoTamanho(string1, string2) {
 }
 checaStringsMesmoTamanho
 */
+
 // EXERCÍCIO 09
 /*
   let array =[]
@@ -124,14 +126,6 @@ retornaPrimeiroElemento
 
 // EXERCÍCIO 10
 /*
-let arrayA = []
-arrayA[0] = prompt("elemento 1:")
-arrayA[1] = prompt("elemento 2:")
-arrayA[2] = prompt("elemento 3:")
-arrayA[3] = prompt("elemento 4:")
-arrayA[4] = prompt("elemento 5:")
-*/
-/*
 function retornaUltimoElemento(arrayA) {
 
   return arrayA[arrayA.length - 1]
@@ -143,11 +137,6 @@ retornaUltimoElemento
 // EXERCÍCIO 11
 /*
 let arrayTroca = []
-arrayTroca[0] = prompt("Elemento 1:")
-arrayTroca[1] = prompt("Elemento 2:")
-arrayTroca[2] = prompt("Elemento 3:")
-arrayTroca[3] = prompt("Elemento 4:")
-arrayTroca[4] = prompt("Elemento 5:")
 
 function trocaPrimeiroEUltimo(arrayTroca) {
 
@@ -169,10 +158,11 @@ let stringX = prompt("Digite outra palavra")
 
 function checaIgualdadeDesconsiderandoCase(stringY, stringX) {
   
-  return stringY === stringX
+  return stringY.toLowerCase() === stringX.toLowerCase()
 }
-checaIgualdadeDesconsiderandoCase()
+checaIgualdadeDesconsiderandoCase
 */
+
 // EXERCÍCIO 13
 /*
   let anoAtual = Number (prompt("Digite o ano atual:"))
@@ -180,28 +170,40 @@ checaIgualdadeDesconsiderandoCase()
   let anoIdentidade = Number (prompt("Digite o ano em que sua carteita de identidade foi emitida"))
   let idade = anoAtual - anoNascimento
 */
-function checaRenovacaoRG(anoAtual, anoNascimento, anoIdentidade, idade) {
+  /*let anoAtual = Number
+  let anoNascimento =Number
+  let anoIdentidade =Number
+  //let idade = anoAtual - anoNascimento */
+
+function checaRenovacaoRG(anoAtual, anoNascimento, anoIdentidade) {
   
-  //const renovar20 = 5
-  //const renovar2050 = 10
-  //const renovar50 = 15
 
-  return (idade <= 20) && ((anoIdentidade+5) <= anoAtual) || (idade > 20 && idade <= 50) && ((anoIdentidade+10) <= anoAtual) || (idade > 50) && ((anoIdentidade+15) <= anoAtual)
-  //console.log((idade <= 20) && ((anoIdentidade+5) <= anoAtual))
-  //let exemplo1 = (idade <= 20) && ((anoIdentidade+5) <= anoAtual)
-  //console.log(exemplo1)  
+  anoAtual = Number (prompt("Digite o ano atual:"))
+  anoNascimento = Number (prompt("Digite o seu ano de nascimento:"))
+  anoIdentidade = Number (prompt("Digite o ano em que sua carteita de identidade foi emitida"))
+  let idade = anoAtual - anoNascimento
+ 
 
-  //return (idade > 20 && idade <= 50) && ((anoIdentidade+10) <= anoAtual)
-  //console.log((idade > 20 && idade <= 50) && ((anoIdentidade+10) <= anoAtual))
-  //let exemplo2 = (idade > 20 && idade <= 50) && ((anoIdentidade+10) <= anoAtual)
-  //console.log (exemplo2)
+  console.log(idade<=20 && ((anoIdentidade+5) <= anoAtual) || (idade >=20 || idade <=50) && ((anoIdentidade+10) <= anoAtual) || (((idade>50) && (anoIdentidade+15)) <= anoAtual) )
 
-  //return (idade > 50) && ((anoIdentidade+15) <= anoAtual)
-  //console.log((idade > 50) && ((anoIdentidade+15) <= anoAtual))
-  //let exemplo3 = (idade > 50) && ((anoIdentidade+15) <= anoAtual)
-  //console.log(exemplo3)
+
+  //console.log( (((anoAtual-anoNascimento)<=20) && ((anoIdentidade+5) <= anoAtual)) || (((anoAtual-anoNascimento)>=20 <=50) && ((anoIdentidade+10) <= anoAtual)) || (((anoAtual-anoNascimento)>50) && ((anoIdentidade+15) <= anoAtual)) )
+  /*return (((anoAtual-anoNascimento)<=20) && ((anoIdentidade+5) <= anoAtual)) || 
+  (((anoAtual-anoNascimento)>=20 <=50) && ((anoIdentidade+10) <= anoAtual)) ||  
+   (((anoAtual-anoNascimento)>50) && ((anoIdentidade+15) <= anoAtual)) 
+*/
+ 
+ 
+  // return ( (((anoAtual-anoNascimento)<=20) && ((anoIdentidade+5) <= anoAtual)) || (((anoAtual-anoNascimento)>=20 <=50) && ((anoIdentidade+10) <= anoAtual)) || (((anoAtual-anoNascimento)>50) && ((anoIdentidade+15) <= anoAtual)) )
+
+  //console.log(((idade<=20) && ((anoIdentidade+5) <= anoAtual)) || ((idade >=20 && idade <=50) && ((anoIdentidade+10) <= anoAtual)) || ((idade>50) && ((anoIdentidade+15) <= anoAtual)))
+  //console.log((((ano - nascimento) <= (20)) && ((rg + 5) <= ano))  ((20 < (ano - nascimento) <= 50) && ((rg + 10) <= ano))  ((ano - nascimento) > 50) && ((rg + 15) <= ano))
+  //return (((idade<=20) && ((anoIdentidade+5) <= anoAtual)) || ((idade >=20 && idade <=50) && ((anoIdentidade+10) <= anoAtual)) || ((idade>50) && ((anoIdentidade+15) <= anoAtual)))
+
+  //console.log(idade<=20 && ((anoIdentidade+5) <= anoAtual) || (idade >=20 || idade <=50) && ((anoIdentidade+10) <= anoAtual) || (idade>50) && ((anoIdentidade+15) <= anoAtual) )
+  //return idade<=20 && (((anoIdentidade+5) <= anoAtual) || (idade >=20 || idade <=50)) && (((anoIdentidade+10) <= anoAtual) || (idade>50)) && (((anoIdentidade+15) <= anoAtual))
 }
-checaRenovacaoRG
+checaRenovacaoRG // ESSA FUNCIONOU NOS TESTES FORA DO ARQUIVO, NÃO ENTENDO PORQUE A LOGICA NÃO FUNCIONA AQUI!!!
 
 // EXERCÍCIO 14
 // **São bissextos** todos os anos múltiplos de 400**.**
