@@ -165,37 +165,25 @@ checaIgualdadeDesconsiderandoCase
 
 // EXERCÍCIO 13
 /*
-  let anoAtual = Number (prompt("Digite o ano atual:"))
-  let anoNascimento = Number (prompt("Digite o seu ano de nascimento:"))
-  let anoIdentidade = Number (prompt("Digite o ano em que sua carteita de identidade foi emitida"))
-  let idade = anoAtual - anoNascimento
-*/
-  /*let anoAtual = Number
+  let anoAtual = Number
   let anoNascimento =Number
   let anoIdentidade =Number
-  //let idade = anoAtual - anoNascimento */
 
-function checaRenovacaoRG(anoAtual, anoNascimento, anoIdentidade) {
-  
-
-  anoAtual = Number (prompt("Digite o ano atual:"))
-  anoNascimento = Number (prompt("Digite o seu ano de nascimento:"))
-  anoIdentidade = Number (prompt("Digite o ano em que sua carteita de identidade foi emitida"))
-  let idade = anoAtual - anoNascimento
- 
-
-  console.log(idade<=20 && ((anoIdentidade+5) <= anoAtual) || (idade >=20 || idade <=50) && ((anoIdentidade+10) <= anoAtual) || (((idade>50) && (anoIdentidade+15)) <= anoAtual) )
-
-
-  //console.log( (((anoAtual-anoNascimento)<=20) && ((anoIdentidade+5) <= anoAtual)) || (((anoAtual-anoNascimento)>=20 <=50) && ((anoIdentidade+10) <= anoAtual)) || (((anoAtual-anoNascimento)>50) && ((anoIdentidade+15) <= anoAtual)) )
-  /*return (((anoAtual-anoNascimento)<=20) && ((anoIdentidade+5) <= anoAtual)) || 
-  (((anoAtual-anoNascimento)>=20 <=50) && ((anoIdentidade+10) <= anoAtual)) ||  
-   (((anoAtual-anoNascimento)>50) && ((anoIdentidade+15) <= anoAtual)) 
 */
- 
- 
-  // return ( (((anoAtual-anoNascimento)<=20) && ((anoIdentidade+5) <= anoAtual)) || (((anoAtual-anoNascimento)>=20 <=50) && ((anoIdentidade+10) <= anoAtual)) || (((anoAtual-anoNascimento)>50) && ((anoIdentidade+15) <= anoAtual)) )
+function checaRenovacaoRG(anoAtual, anoNascimento, anoIdentidade) {
+  /*
+  let renovar20 = (((anoAtual-anoNascimento)<=20) && ((anoIdentidade+5) <= anoAtual))
+  let renovar2050 = (((anoAtual-anoNascimento)>=20 <=50) && ((anoIdentidade+10) <= anoAtual))
+  let renovar50 = (((anoAtual-anoNascimento)>50) && ((anoIdentidade+15) <= anoAtual))
+*/
+  //console.log(renovar20 || renovar2050 || renovar50)
+  //return renovar20 || renovar2050 || renovar50
 
+  console.log( (anoAtual-anoNascimento<=20 && ((anoIdentidade+5) <= anoAtual)) || (anoAtual-anoNascimento >=20 <=50 && anoIdentidade+10 <= anoAtual) || (anoAtual-anoNascimento>50 && anoIdentidade+15 <= anoAtual) )
+
+  //return (((anoAtual-anoNascimento)<=20) && ((anoIdentidade+5) <= anoAtual)) || ((anoAtual-anoNascimento>=20 <=50) && ((anoIdentidade+10) <= anoAtual)) || ((anoAtual-anoNascimento >50) && ((anoIdentidade+15) <= anoAtual)) 
+  //console.log(((idade<=20) && ((anoIdentidade+5) <= anoAtual)) || ((idade>=20 <=50) && ((anoIdentidade+10) <= anoAtual)) || ((idade>50) && ((anoIdentidade+15) <= anoAtual)) ) 
+ 
   //console.log(((idade<=20) && ((anoIdentidade+5) <= anoAtual)) || ((idade >=20 && idade <=50) && ((anoIdentidade+10) <= anoAtual)) || ((idade>50) && ((anoIdentidade+15) <= anoAtual)))
   //console.log((((ano - nascimento) <= (20)) && ((rg + 5) <= ano))  ((20 < (ano - nascimento) <= 50) && ((rg + 10) <= ano))  ((ano - nascimento) > 50) && ((rg + 15) <= ano))
   //return (((idade<=20) && ((anoIdentidade+5) <= anoAtual)) || ((idade >=20 && idade <=50) && ((anoIdentidade+10) <= anoAtual)) || ((idade>50) && ((anoIdentidade+15) <= anoAtual)))
@@ -203,7 +191,7 @@ function checaRenovacaoRG(anoAtual, anoNascimento, anoIdentidade) {
   //console.log(idade<=20 && ((anoIdentidade+5) <= anoAtual) || (idade >=20 || idade <=50) && ((anoIdentidade+10) <= anoAtual) || (idade>50) && ((anoIdentidade+15) <= anoAtual) )
   //return idade<=20 && (((anoIdentidade+5) <= anoAtual) || (idade >=20 || idade <=50)) && (((anoIdentidade+10) <= anoAtual) || (idade>50)) && (((anoIdentidade+15) <= anoAtual))
 }
-checaRenovacaoRG // ESSA FUNCIONOU NOS TESTES FORA DO ARQUIVO, NÃO ENTENDO PORQUE A LOGICA NÃO FUNCIONA AQUI!!!
+checaRenovacaoRG() // ESSA FUNCIONOU NOS TESTES FORA DO ARQUIVO, NÃO ENTENDO PORQUE A LOGICA NÃO FUNCIONA AQUI!!!
 
 // EXERCÍCIO 14
 // **São bissextos** todos os anos múltiplos de 400**.**
