@@ -1,17 +1,17 @@
-
    console.log("Boas vindas ao jogo de Blackjack!")
    console.log("---------------------------------")
 
-/*
-    const carta = comprarCarta(); // Sorteia uma carta. Por exemplo, o rei de ouros
-    
-    console.log(carta.texto) // imprime o texto da carta. Exemplo: "K♦️" (indica "K" de ouros)
-    console.log(carta.valor) // imprime o valor da carta (um número). Exemplo: 10 (dado que "K" vale 10)
-*/
 const carta = comprarCarta();
 
-    if (confirm("Quer iniciar uma nova rodada?")){
+   let resposta = (confirm("Quer iniciar uma nova rodada?"))
+   let i = 0
 
+   while (resposta===true){
+   i++
+   resposta = (confirm("Quer iniciar uma nova rodada?"))
+
+   if (resposta === true){
+      
       let cartaUsuario1 = comprarCarta()
       let cartaUsuario2 = comprarCarta()
       let cartaComp1 = comprarCarta()
@@ -30,22 +30,9 @@ const carta = comprarCarta();
       }if (somaUsuario === somaComputador){
          console.log("Empate!")
       }
-      
-   } else{
+   }
+}
+   if (resposta === false){
       console.log("O jogo acabou")
     }
- 
-    
-    
-    /*function usuario(carta, carta){
-      console.log("Usuário - cartas:", carta.texto, carta.texto, "pontuação:", carta.valor + carta.valor)
 
-   }
-   usuario(comprarCarta(carta), comprarCarta(carta))
-   
-   function computador(carta, carta) {
-      console.log("Computador - cartas:", carta.texto, carta.texto, "pontuação:", carta.valor + carta.valor)
-
-   }
-   computador(comprarCarta(carta), comprarCarta(carta))
-   */
