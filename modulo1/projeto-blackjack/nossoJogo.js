@@ -1,4 +1,4 @@
-   console.log("Boas vindas ao jogo de Blackjack!")
+/*   console.log("Boas vindas ao jogo de Blackjack!")
    console.log("---------------------------------")
 
 const carta = comprarCarta();
@@ -36,3 +36,4 @@ const carta = comprarCarta();
       console.log("O jogo acabou")
     }
 
+*/
