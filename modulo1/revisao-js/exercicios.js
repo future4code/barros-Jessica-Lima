@@ -42,7 +42,9 @@ function retornaNumerosParesElevadosADois(array) {
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-  
+   
+   let maiorNumero = Math.max.apply(null, array)
+   return maiorNumero
 }
 
 // EXERCÍCIO 07
