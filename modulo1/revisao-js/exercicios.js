@@ -2,7 +2,7 @@
 //    -> NÃO COMENTE NENHUMA DAS FUNÇÕES DECLARADAS!!! 
 //    -> NÃO MODIFIQUE OS PARÂMETROS DAS FUNÇÕES!!! ()
 
-/*
+
 // EXERCÍCIO 01
 function retornaTamanhoArray(array) {
    return array.length
@@ -62,7 +62,7 @@ function retornaObjetoEntreDoisNumeros(num1, num2) {
    }
    return doisNumeros
 }
-*/
+
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
 
@@ -79,7 +79,18 @@ function retornaNPrimeirosPares(n) {
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
+   
+   if(ladoA === ladoB && ladoA === ladoC){
+      return "Equilátero"
+   }
 
+   if ( ladoA == ladoB && ladoA != ladoC || ladoA == ladoC && ladoA != ladoB || ladoB == ladoC && ladoB != ladoA){
+      return "Isósceles"
+   }
+
+   if (ladoA != ladoB != ladoC){
+      return "Escaleno"
+   }
 }
 
 // EXERCÍCIO 10
