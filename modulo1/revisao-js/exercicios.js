@@ -2,7 +2,7 @@
 //    -> NÃO COMENTE NENHUMA DAS FUNÇÕES DECLARADAS!!! 
 //    -> NÃO MODIFIQUE OS PARÂMETROS DAS FUNÇÕES!!! ()
 
-
+/*
 // EXERCÍCIO 01
 function retornaTamanhoArray(array) {
    return array.length
@@ -62,10 +62,19 @@ function retornaObjetoEntreDoisNumeros(num1, num2) {
    }
    return doisNumeros
 }
-
+*/
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
-   
+
+   let arrayPares = [] 
+
+   for(let i = 0; arrayPares.length < n; i++){
+
+      if (i % 2 === 0){
+         arrayPares.push(i) 
+      }
+   }  
+   return arrayPares
 }
 
 // EXERCÍCIO 09
