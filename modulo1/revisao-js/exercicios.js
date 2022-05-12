@@ -111,12 +111,7 @@ function retornaSegundoMaiorESegundoMenor(array) {
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-   /*
-   let nomeFilme
-   let anoFilme
-   let diretorFilme
-   let elencoFilme
-*/
+  
    filme = {
       nome: "O Diabo Veste Prada",
       ano: 2006,
@@ -129,7 +124,13 @@ function retornaChamadaDeFilme(filme) {
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
-   
+
+   const pessoaTroca = {
+      ...pessoa,
+      nome: "ANÔNIMO"
+   }
+
+   return pessoaTroca
 }
 
 // EXERCÍCIO 13A
