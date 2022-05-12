@@ -163,6 +163,44 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
 
+   for(let i = 0; i< contas.length; i++){
+
+      let auxiliar = []
+    
+      function somarDebitos(debitos){   // soma os débitos
+        return debitos.reduce((a, b) => a + b, 0)
+    }
+    
+      calcularSaldoFinal(contas)
+
+     function calcularSaldoFinal(x){
+       x[i].compras.forEach(element => auxiliar.push(element * -1))
+     }
+    
+    contas[i].compras = []
+    contas[i].saldoTotal += somarDebitos(auxiliar)
+    
+    }
+    return contas
+
+
+   /*
+   for(let i = 0; i < contas.length; i++){
+
+      let array = []
+      calcularSaldoFinal(contas)
+
+      function calcularSaldoFinal(debitos){
+         debitos[i].compras.forEach(numero => array.push(numero * -1))
+      }
+      function somaNumeros(numeros){
+         return numeros.reduce((sum, numeros)=> sum + numeros,0)
+      }
+      contas[i].compras = []
+      contas[i].calcularSaldoFinal += somaNumeros(array)
+   }
+   return contas
+   */
 }
 
 // EXERCÍCIO 15A
