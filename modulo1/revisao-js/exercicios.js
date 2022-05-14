@@ -182,33 +182,48 @@ function retornaContasComSaldoAtualizado(contas) {
     
     }
     return contas
-
-
-   /*
-   for(let i = 0; i < contas.length; i++){
-
-      let array = []
-      calcularSaldoFinal(contas)
-
-      function calcularSaldoFinal(debitos){
-         debitos[i].compras.forEach(numero => array.push(numero * -1))
-      }
-      function somaNumeros(numeros){
-         return numeros.reduce((sum, numeros)=> sum + numeros,0)
-      }
-      contas[i].compras = []
-      contas[i].calcularSaldoFinal += somaNumeros(array)
-   }
-   return contas
-   */
 }
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
+   
+   let ordemA = consultas.sort(function(a, b){
+      if (a.nome < b.nome){
+         return -1
+      } else {
+         return true
+      }
+
+   })
+   return ordemA
 }
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
+  
+  for (let i = 0; i < 3; i++){
+     consultas.sort((a, b) => a.dataDaConsulta.split("/")[i] > b.dataDaConsulta.split("/")[i]? 1: dataDaConsulta.split("/"))
+  }
+  return consultas
+  
+  
+   /*
+   let ordemData = consultas.sort(function(a, b){
+      
+      if (a.dataDaConsulta > b.dataDaConsulta){
+         return -1
+      }else {
+         return true
+      }
+   })
+   return ordemData
    
+   */
+   /*
+   function ordemData(a,b){
+      return a.dadaDaConsulta > b.dadaDaConsulta
+   }
+   consultas.sort(ordemData)
+   return ordemData
+   */
 }
