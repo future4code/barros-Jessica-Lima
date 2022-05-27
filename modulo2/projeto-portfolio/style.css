@@ -33,7 +33,7 @@ h3 {
 /*BOTÕES*/
 .botao{
    position: relative;
-   background-color: #0026e9; 
+   background-color: #2e2e2e; 
    color: white;
    font-size: 12px;
    font-weight: bolder;
@@ -45,6 +45,10 @@ h3 {
    margin-right: 5px;
    margin-top: 15px;
    margin-bottom: 15px;
+}
+.botao:hover{
+    color: #0026e9;
+    font-weight: bolder;
 }
 
 .container-botoes{
@@ -65,7 +69,7 @@ h3 {
 }
 
 header{
-   background-color: #0026e9;
+   background-color: #2e2e2e;
    position: fixed;
    top: 0;
    left: 0;
@@ -88,12 +92,13 @@ header{
 
 .front{ /*sessão 2*/
    position: absolute;
-   background-color: #dcdcdc;
-   margin-top: 250px;
+   background-color: white;
+   margin-top: auto;
    padding-top: 650px;  
    width: 100%;
    right: 0;
    left: 0;
+   float: right; 
 
 }
 .fronts{
@@ -110,13 +115,30 @@ header{
    margin-bottom: 100px;
 }
 
-.rodape{
-   position: absolute;
-   background-color: #0026e9;
-   margin-top: 900px;
-   padding-top: 600px;  
-   width: 100%;
-   right: 0;
+
+
+/*PAGINA INICIAL*/
+
+.contratar{
+   background-color: white;
+   color: #0026e9;
+   border-color: #0026e9;
+
+
+   margin-top: -200px;
+   margin-right: 270px;
+
+   padding-left: 80px;
+   padding-right: 80px;
+   padding-top: 12px;
+   padding-bottom: 12px;
+
+   font-size: 20px;
+   font-weight: bolder;
+
+   float: right; /*issooooo*/
 }
-
-
+.contratar:hover{
+   background-color: #0026e9;
+    color: white;
+}
