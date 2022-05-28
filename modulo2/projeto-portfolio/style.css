@@ -142,3 +142,16 @@ header{
    background-color: #0026e9;
     color: white;
 }
+
+.descricaoindex{
+   font-family: Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 10px;
+    position: absolute;
+    top: 360px;
+    left: 700px;
+    color: #808080; 
+
+    line-height: 20px;
+}
