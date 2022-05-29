@@ -155,3 +155,42 @@ header{
 
     line-height: 20px;
 }
+
+/* CONTATO*/
+
+.contato{
+   margin-top: 300px;
+   margin-left: 100px;
+   list-style:none;
+   
+}
+.cont{
+   margin-top: 100px;
+   color:#808080;
+   text-decoration: none;
+}
+a:link, a:visited {
+   font-weight: bold;
+	text-decoration: none;
+   color:#808080
+	}
+a:hover {
+   font-weight: bold;
+	text-decoration: none;
+	color: #0026e9
+	}
+a:active {
+   font-weight: bold;
+	text-decoration: none
+	}
+
+   td {
+      border-left-width: 0;
+      min-width: 50px;
+      height: 60px;
+    }
+
+.memoji3{
+   margin-top: -380px;
+   margin-left: 760px;
+}
