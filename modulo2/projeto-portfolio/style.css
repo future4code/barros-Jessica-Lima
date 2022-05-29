@@ -28,6 +28,7 @@ h3 {
    left: 100px;
    color: #808080; 
 
+
 }
 
 /*BOTÕES*/
@@ -195,4 +196,64 @@ a:active {
    margin-left: 760px;
 }
 
-/* RODAPE*/
+#experiencias{
+   font-family: Helvetica, sans-serif; 
+   font-size: 50px; 
+   color: white; 
+   position: absolute;
+   top: 550px;
+   left: 100px;
+   padding-top: 140px;
+   width: 100%;
+
+   
+}
+#estudo{
+   font-family: Helvetica, sans-serif;
+   font-weight: 100; 
+   font-size: 40px; 
+   color: white; 
+   position: absolute;
+   margin-top: 700px;
+   left: 100px;
+
+
+}
+.estudo{
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: bold;
+   color: white;
+   padding-top: 240px;
+   padding-bottom: 100px;
+   margin-left: 100px;
+   
+
+}
+.trabalho{
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: bold;
+   color: white;
+   margin-top: -295px;
+   margin-left: 570px;
+
+
+}
+
+.sessao2{
+   display: inline-block;
+   background-color: #0026e9;
+   
+   margin-top: 150px;
+   padding-bottom: 200px;
+   
+   width: 100%;
+   padding-left: 0;
+   padding-right: 0;
+   margin-left: 0;
+   margin-right: 0;
+}
+
+html, body {
+   margin: 0;
+   padding: 0;
+ }

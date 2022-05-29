@@ -90,13 +90,13 @@
     line-height: 20px;
  }
 #jogar{
-    background-color: white;
+   background-color: white;
    color: #0026e9;
    border-color: #0026e9;
 
 
    margin-top: -350px;
-   margin-right: 900px;
+   margin-right: 830px;
 
    padding-left: 120px;
    padding-right: 120px;
@@ -125,4 +125,29 @@ h2{
     z-index: 9;
 
     padding-bottom: 100px;
+}
+
+.descricao-blackjack{
+   font-family: Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 10px;
+    position: absolute;
+    top: 250px;
+    left: 100px;
+    color: #808080; 
+    line-height: 20px;
+}
+#codigo{
+   font-family: Helvetica, sans-serif; 
+   font-size: 50px; 
+   color: #0026e9; 
+   position: absolute;
+   top: 360px;
+   left: 100px;
+}
+
+.blackjack1{
+   margin-top: 460px;
+   margin-right: 120px;
 }
