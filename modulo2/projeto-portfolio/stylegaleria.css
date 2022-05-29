@@ -149,5 +149,13 @@ h2{
 
 .blackjack1{
    margin-top: 460px;
-   margin-right: 120px;
+   margin-right: 150px;
+}
+#resultado{
+   margin-top: 2000px;
+   text-align: center;
+   font-size: 50px;
+}
+.resultados{
+   margin-top: 190px;
 }
