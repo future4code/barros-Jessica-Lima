@@ -1,0 +1,81 @@
+/* CABEÇALHO */
+*{
+    margin: 0;
+}
+
+header{
+    background-color: coral;
+
+    display: grid;
+    grid-template-columns: 80% 10%;
+    align-items: center;
+    
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#busca{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+/* CORPO */
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+section {
+    margin: 20px;
+    border: 1px solid yellowgreen;
+
+    width: 95%;
+    height: 95%;
+
+}
+img {
+    width: 100%;
+}
+p{
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+#idMain{
+    margin-bottom: 400px;
+}
+
+#video1{
+    display: grid;
+    grid-template-columns: 1fr ;
+    
+}
+embed{
+    width: 900px;
+    height: 500px;
+
+    padding-bottom: 200px;
+}
+
+/* RODAPÉ */
+footer{
+    background-color: #2e2e2e;
+    color: white;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
