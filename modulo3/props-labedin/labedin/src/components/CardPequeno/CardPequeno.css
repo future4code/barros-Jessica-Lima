@@ -1,0 +1,24 @@
+.card-email {
+    display: flex;
+    align-items: center;
+    border: 2px solid #896b49;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+    height: 90px;
+    border-radius: 10px;
+}
+
+.card-email > img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.card-email h4 {
+    margin-bottom: 15px;
+}
+
+.card-email > div {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+}
