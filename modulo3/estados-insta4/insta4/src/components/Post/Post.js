@@ -87,7 +87,6 @@ function Post(props){
       </div>
 
       {componenteComentario}
-      {componenteCurtida}
 
     </div>
   )
