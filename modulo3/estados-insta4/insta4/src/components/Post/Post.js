@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
-import './style.css'
 import {IconeComContador} from '../IconeComContador/IconeComContador'
 import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
 import { SecaoCurtida } from '../SecaoCurtida/SecaoCurtida'
+import { PostContainer, PostFooter, PostHeader, PostPhoto } from '../../style'
 
 function Post(props){
   const [numeroCurtidas, setnumeroCurtidas] = useState (0)
@@ -25,7 +25,7 @@ function Post(props){
     }
     console.log("Curtiu!");
   }
-  
+
   const handlerespostaUsuario = (event) =>{
     setrespostaUsuario(event.target.value)
     console.log(respostaUsuario)
@@ -38,12 +38,12 @@ function Post(props){
       componenteComentario = 
       <SecaoComentario aoEnviar={aoEnviarComentario} resposta={respostaUsuario} 
       onChangeComentario={handlerespostaUsuario} />
-      
+
     }
 
     console.log(comentando)
   }
-  
+
   const aoEnviarComentario = () => {
     setComentando(false)
     setNumeroComentarios(numeroComentarios + 1)
@@ -64,15 +64,15 @@ function Post(props){
     }
 
   return(
-    <div className = 'PostContainer'>
-      <div className = 'PostHeader'>
+    <PostContainer>
+      <PostHeader>
         <img className = 'UserPhoto' src={props.fotoUsuario} alt={'Imagem do usuario'}/>
         <p>{props.nomeUsuario}</p>
-      </div>
+      </PostHeader>
 
-      <img className = 'PostPhoto'src={props.fotoPost} alt={'Imagem do post'}/>
+      <PostPhoto className = 'PostPhoto'src={props.fotoPost} alt={'Imagem do post'}/>
 
-      <div className = 'PostFooter'>
+      <PostFooter>
         <IconeComContador
           icone={iconeCurtida}
           onClickIcone={onClickCurtida}
@@ -84,13 +84,14 @@ function Post(props){
           onClickIcone={onClickComentario}
           valorContador={numeroComentarios}
         />
-      </div>
+      </PostFooter>
 
       {componenteComentario}
+      {componenteCurtida}
 
-    </div>
+      </PostContainer>
   )
 }
 
 
-export default Post
+export default Post 
