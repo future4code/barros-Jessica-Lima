@@ -63,12 +63,15 @@ function Post(props){
       componenteComentario = <SecaoComentario aoEnviar={aoEnviarComentario} valor={respostaUsuario} onChangeComentario={handlerespostaUsuario}/>
     }
 
+
   return(
     <PostContainer>
       <PostHeader>
         <img className = 'UserPhoto' src={props.fotoUsuario} alt={'Imagem do usuario'}/>
         <p>{props.nomeUsuario}</p>
+
       </PostHeader>
+      
 
       <PostPhoto className = 'PostPhoto'src={props.fotoPost} alt={'Imagem do post'}/>
 

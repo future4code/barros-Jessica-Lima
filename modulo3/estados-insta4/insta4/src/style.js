@@ -18,6 +18,8 @@ export const PostHeader=styled.div`
         margin-right: 10px;
         border-radius: 50%;
     }
+
+
 `
 export const PostFooter=styled.div`
     height: 40px;
@@ -50,5 +52,30 @@ export const MainContainer=styled.div`
     
     ul{
         list-style: none;
+    }
+`
+
+export const FormPost=styled.form`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 100%;
+
+    input{
+        margin-left: 20px;
+        padding: 8px;
+    }
+    button{
+        margin-left: 20px;
+        border: none;
+        padding: 10px;
+        text-decoration: none;
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
     }
 `
