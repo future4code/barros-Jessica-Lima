@@ -1,7 +1,7 @@
 # Exercício Thinking in React
 
 ## Passo 1 -  Mock de dados 
-![](/src/img/passo1.png)
+![/src/img/passo1.png]
 
 ## Passo 2 -Pensar no componente 
 ![](/src/img/componente1.png)
