@@ -14,4 +14,5 @@
 ## Passo 3 - Pensar onde está o Estado
 ![fluxograma2](https://user-images.githubusercontent.com/102320940/179118398-1dea3054-47fb-4817-b670-9e794cebfd05.jpg)
 
-
+### Passo 4 - Organizando-se para o projeto
+![Captura de tela de 2022-07-14 20-53-40](https://user-images.githubusercontent.com/102320940/179120007-b63002ea-5a49-451b-a16b-89b0f768ea71.png)
