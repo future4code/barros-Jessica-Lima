@@ -12,3 +12,6 @@ Tela incial
 ### Header
 Ícones referentes a tela home (tela de usuarios) e ícone de matchs referente a tela de listagem dos matchs
 ![Captura de tela de 2022-08-06 15-51-10](https://user-images.githubusercontent.com/102320940/183262271-fbbf6dc6-542f-4d5b-8611-5dbc931d4eea.png)
+
+Nome, idade e bio dos usuários, junto com os botões de escolha (positivo e negativo)
+![Captura de tela de 2022-08-06 15-52-07](https://user-images.githubusercontent.com/102320940/183262327-4183eda1-8565-4986-a5f0-b9267b58a3ad.png)
