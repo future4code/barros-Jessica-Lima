@@ -9,8 +9,6 @@ export function AplicationForm(){
         navigate(-1)
     }
 
-    
-
     return(
         <>
             <h1>Formulario de viagem</h1>
