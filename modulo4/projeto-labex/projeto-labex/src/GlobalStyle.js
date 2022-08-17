@@ -21,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     button{
-        padding: 8px 160px;
+        padding: 8px 20px;
         border-style: none;
         background-color: gray;
         font-weight: 600;
@@ -38,8 +38,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     input{
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
         border-style: none;
         width: 8px 160px;
         padding-left: 10px;
@@ -48,12 +48,12 @@ export const GlobalStyle = createGlobalStyle`
         padding-right: 170px;
         font-weight: 600;
         border-radius: 5px;
-        color: white;
+        color: black;
     }
     select{
         width: 360px;
-        padding-top: 8px;
-        padding-bottom: 8px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         padding-left: 10px;
         border-radius: 5px;
         background-color: white;

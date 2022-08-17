@@ -6,9 +6,6 @@ export const ContainerForm=styled.div`
         margin: auto;
 
     }
-    .btnform{
-        padding: 10px 20px;
-    }
     select{
         margin-top: 10px;
     }
