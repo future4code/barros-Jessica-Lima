@@ -3,9 +3,10 @@ import { UseForm } from "../../hook/UseForm"
 import { ContainerForm } from "./style"
 import axios from "axios"
 import { BASE_URL } from "../../constantes/url"
+import useRequestData from "../../hook/UseRequestData"
 
-export function AplicationForm(){
-    
+export function AplicationForm(props){
+    const [data] = useRequestData(`${BASE_URL}trips`)
     const navigate = useNavigate()
     const [body,onChange,clear]=UseForm({ 
         name: "", 
@@ -13,6 +14,7 @@ export function AplicationForm(){
         applicationText: "",
         profession: "",
         country: "",
+        trip: ""
     })
 
     const ApplyToTrip=(event)=>{
@@ -38,6 +40,13 @@ export function AplicationForm(){
     const goToLastPage = () =>{
         navigate(-1)
     }
+
+    const TripId = data && data.trips && data.trips.map((trip)=>{
+        return(
+            <option key={trip.id}>{trip.name} - {trip.planet}</option>
+        )
+    })
+
     return(
         <>
             <h1>Candidatar-se</h1>
@@ -339,6 +348,7 @@ export function AplicationForm(){
                         <option value="Zimbabwe">Zimbabwe</option>
                         <option value="Zâmbia">Zâmbia</option>
                     </select>
+                    <select>{TripId}</select>
                     <button>Enviar</button>
 
                 </form>

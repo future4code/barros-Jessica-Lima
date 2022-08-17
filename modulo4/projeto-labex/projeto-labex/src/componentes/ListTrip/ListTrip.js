@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { BASE_URL } from "../../constantes/url"
 import useRequestData from "../../hook/UseRequestData"
+import { AplicationForm } from "../AplicationForm/AplicationForm"
 import { ContainerT, ContainerTrips } from "./style"
 
 
@@ -45,7 +46,7 @@ export function ListTrip(){
             {listTrips}
             </main>
         </ContainerT>
-
+     
         </>
     )
 }
