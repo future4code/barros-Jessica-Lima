@@ -1,7 +1,9 @@
 import { useNavigate } from "react-router-dom"
+import { useProtectPage } from "../../hook/UseProtectPage"
 
 export function AdminHome(){
-
+    useProtectPage();
+    
     const navigate = useNavigate()
 
     const goToLastPage = () =>{

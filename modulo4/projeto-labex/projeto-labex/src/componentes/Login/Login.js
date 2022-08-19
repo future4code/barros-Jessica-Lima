@@ -7,26 +7,28 @@ import { ContainerLogin } from "./style"
 export function Login(){
 
     const navigate = useNavigate()
-    const [ body,onChange,clear ]=UseForm({ email: "", senha: ""})
+    const [form, onChange, clear] = UseForm({ email: "", password: "" })
 
     const goToLastPage = () =>{
         navigate(-1)
     }
-    //const goToAdminHome=()=>{
-    //    navigate("/admin-home")
-    //}
+    const goToAdminHome=(navigate)=>{
+        navigate("/admin-home")
+    }
 
     const fazerLogin = (event)=>{
-        navigate("/admin-home")
 
         event.preventDefault()
-        axios.post(`${BASE_URL}login`, body)
+        
+        axios.post(`${BASE_URL}login`, form)
             .then((response)=>{
                 console.log(response.data)
-            }).catch((erro)=>{
-                console.log("deu erro", erro)
+                localStorage.setItem("token", response.data.token)
+                goToAdminHome(navigate)
             })
-        clear();
+            .catch((erro)=> console.log("deu erro", erro))
+            
+        //clear();
     }
 
     return(
@@ -40,20 +42,20 @@ export function Login(){
                     name="email"
                     type="email"
                     placeholder="email"
-                    value={body.email}
+                    value={form.email}
                     onChange={onChange}
                     required
                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                 
                 ></input>
-                <label htmlFor="senha">Senha</label>
+                <label htmlFor="password">Senha</label>
                 <input 
-                    id="senha"
-                    name="senha"
+                    id="password"
+                    name="password"
                     type="password"
                     required
                     placeholder="senha"
-                    value={body.senha}
+                    value={form.senha}
                     onChange={onChange}
                     pattern="^.{3,}"
                 

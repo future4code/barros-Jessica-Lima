@@ -3,8 +3,10 @@ import { UseForm } from "../../hook/UseForm"
 import { ContainerForm } from "./style"
 import axios from "axios"
 import { BASE_URL } from "../../constantes/url"
+import { useProtectPage } from "../../hook/UseProtectPage"
 
 export function CreateTrip(){
+    useProtectPage();
 
     const navigate = useNavigate()
     const [form,onChange,clear]=UseForm({ 
