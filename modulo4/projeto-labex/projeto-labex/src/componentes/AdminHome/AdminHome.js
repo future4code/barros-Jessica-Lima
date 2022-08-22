@@ -1,5 +1,8 @@
+import axios from "axios";
 import { useNavigate } from "react-router-dom"
+import { BASE_URL } from "../../constantes/url";
 import { useProtectPage } from "../../hook/UseProtectPage"
+import useRequestData from "../../hook/UseRequestData"
 
 export function AdminHome(){
     useProtectPage();
@@ -16,6 +19,7 @@ export function AdminHome(){
     const goToCreateTrip=()=>{
         navigate("/create-trip")
     }
+
 
     return(
         <>

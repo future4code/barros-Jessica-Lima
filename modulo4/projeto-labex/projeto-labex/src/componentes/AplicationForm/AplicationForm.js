@@ -19,20 +19,13 @@ export function AplicationForm(props){
 
     const ApplyToTrip=(event)=>{
         event.preventDefault()
-        /*
-        const body = {
-            name: form.name,
-            age: form.age,
-            applicationText: form.applicationText,
-            profession: form.profession,
-            country: form.country,
-        }
-*/
-        axios.post(`${BASE_URL}apply`, body)
+
+        axios.post(`${BASE_URL}trips/NoIFVcOiSgTKTIPVZwXS/apply`, body)
             .then((response)=>{
                 console.log(response.data)
+                alert("Inscrição enviada com sucesso!")
             }).catch((erro)=>{
-                console.log("deu erro", erro)
+                console.log("nao deu", erro)
             })
         clear();
     }
@@ -52,9 +45,9 @@ export function AplicationForm(props){
             <h1>Candidatar-se</h1>
             <ContainerForm>
                 <form onSubmit={ApplyToTrip}>
-                    <label htmlFor="nome">Nome</label>
+                    <label htmlFor="name">Nome</label>
                     <input 
-                        id="nome"
+                        id="name"
                         name="name"
                         type="text"
                         placeholder="Nome"
@@ -63,20 +56,20 @@ export function AplicationForm(props){
                         value={body.name}
                         onChange={onChange}
                     ></input>
-                    <label htmlFor="idade">Idade</label>
+                    <label htmlFor="age">Idade</label>
                     <input 
-                        id="idade"
+                        id="age"
                         name="age"
                         type="number"
                         placeholder="Idade"
-                        Min={18}
+                        min={18}
                         required
                         value={body.age}
                         onChange={onChange}
                     ></input>
-                    <label htmlFor="txtCandidatura">Texto de candidatura</label>
+                    <label htmlFor="applicationText">Texto de candidatura</label>
                     <input 
-                        id="txtCandidatura"
+                        id="applicationText"
                         name="applicationText"
                         type="text"
                         placeholder="Texto de candidatura"
@@ -85,9 +78,9 @@ export function AplicationForm(props){
                         value={body.applicationText}
                         onChange={onChange}
                     ></input>
-                    <label htmlFor="profissao">Profissão</label>
+                    <label htmlFor="profession">Profissão</label>
                     <input 
-                        id="profissao"
+                        id="profession"
                         name="profession"
                         type="text"
                         placeholder="Profissão"
@@ -96,7 +89,14 @@ export function AplicationForm(props){
                         value={body.profession}
                         onChange={onChange}
                     ></input>
-                    <select>
+                    <label htmlFor="country">País</label>
+                    <select 
+                        id="country"
+                        name="country"   
+                        required 
+                        value={body.country}
+                        onChange={onChange}
+                    >
                         <option value="Brasil" selected="selected">Brasil</option>
                         <option value="Afeganistão">Afeganistão</option>
                         <option value="África do Sul">África do Sul</option>

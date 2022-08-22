@@ -28,7 +28,11 @@ export function CreateTrip(){
             durationInDays: form.durationInDays,
         }
 
-        axios.post(`${BASE_URL}trips`, body)
+        axios.post(`${BASE_URL}trips`, body, 
+        {headers: {
+            auth: localStorage.getItem("token")
+        }
+        })
             .then((response)=>{
                 console.log(response.data)
             }).catch((erro)=>{
@@ -47,9 +51,9 @@ export function CreateTrip(){
             <button onClick={goToLastPage} >Voltar</button>
             <ContainerForm>
                 <form onSubmit={createTrip}>
-                            <label htmlFor="nome">Nome</label>
+                            <label htmlFor="name">Nome</label>
                             <input 
-                                id="nome"
+                                id="name"
                                 name="name"
                                 type="text"
                                 placeholder="Nome"
@@ -58,7 +62,13 @@ export function CreateTrip(){
                                 value={form.name}
                                 onChange={onChange}    
                             ></input>
-                        <select>
+                        <select
+                            id="planet"
+                            name="planet"
+                            required
+                            value={form.planet}
+                            onChange={onChange}
+                        >
                             <option>Escolha um planeta</option>
                             <option>Mercúrio</option>
                             <option>Vênus</option>
@@ -69,12 +79,12 @@ export function CreateTrip(){
                             <option>Urano</option>
                             <option>Netuno</option>
                         </select>
-                            <label htmlFor="data">Data</label>
+                            <label htmlFor="date">Data</label>
                             <input 
-                                id="data"
+                                id="date"
                                 name="date"
                                 type="date"
-                                min={"2022-08-20"}
+                                Min={"2022-08-22"}
                                 required
                                 value={form.date}
                                 onChange={onChange}
