@@ -348,7 +348,14 @@ export function AplicationForm(props){
                         <option value="Zimbabwe">Zimbabwe</option>
                         <option value="Zâmbia">Zâmbia</option>
                     </select>
-                    <select>{TripId}</select>
+                    <label htmlFor="trip">Viagem</label>
+                    <select
+                        id="trip"
+                        name="trip"
+                        required
+                        value={body.trip}
+                        onChange={onChange}
+                    >{TripId}</select>
                     <button>Enviar</button>
 
                 </form>
