@@ -4,6 +4,7 @@ import { ContainerForm } from "./style"
 import axios from "axios"
 import { BASE_URL } from "../../constantes/url"
 import useRequestData from "../../hook/UseRequestData"
+import { Button, ButtonGroup, Heading } from '@chakra-ui/react'
 
 export function AplicationForm(props){
     const [data] = useRequestData(`${BASE_URL}trips`)
@@ -42,7 +43,13 @@ export function AplicationForm(props){
 
     return(
         <>
-            <h1>Candidatar-se</h1>
+             <Heading 
+                mt='10'
+                mb='5'
+                color='blue'>
+                    Candidatar-se            
+            </Heading>
+
             <ContainerForm>
                 <form onSubmit={ApplyToTrip}>
                     <label htmlFor="name">Nome</label>
@@ -356,6 +363,7 @@ export function AplicationForm(props){
                         value={body.trip}
                         onChange={onChange}
                     >{TripId}</select>
+                    
                     <button>Enviar</button>
 
                 </form>

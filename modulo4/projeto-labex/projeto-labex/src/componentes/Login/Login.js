@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { BASE_URL } from "../../constantes/url"
 import { UseForm } from "../../hook/UseForm"
 import { ContainerLogin } from "./style"
+import { Heading, Button } from '@chakra-ui/react'
 
 export function Login(){
 
@@ -33,7 +34,12 @@ export function Login(){
 
     return(
         <>
-            <h1>Login</h1>
+            <Heading 
+                mt='10'
+                mb='5'
+                color='blue'>
+                    Login
+            </Heading>
             <ContainerLogin>
             <form onSubmit={fazerLogin}>
                 <label htmlFor="email">E-mail</label>
@@ -60,10 +66,17 @@ export function Login(){
                     pattern="^.{3,}"
                 
                 ></input>
+                
                 <button>Entrar</button>
             </form>
             </ContainerLogin>
-            <button onClick={goToLastPage} >Voltar</button>
+            <Button 
+                    mt='4'
+                    colorScheme='blue'
+                    size='sm' 
+                    variant='solid' 
+                    onClick={goToLastPage} >Voltar</Button>
+
         </>
     )
 }

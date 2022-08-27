@@ -1,4 +1,8 @@
 import { useNavigate } from "react-router-dom"
+import { Button } from '@chakra-ui/react'
+import { Heading } from '@chakra-ui/react'
+import { Text, SimpleGrid, Box } from '@chakra-ui/react'
+import { ContainerHome, ContainerBtn } from "./style"
 
 export function Home(){
 
@@ -11,10 +15,39 @@ export function Home(){
         navigate("/login")
     }
     return(
-       <>
-       <h1>Home</h1>
-        <button onClick={goToLogin} >Área administrativa</button>
-        <button onClick={goToListTrips} >Lista de viagens</button>
-       </> 
+
+       <ContainerHome>
+            <SimpleGrid columns={1} spacing={2}>
+                <Box height='80px'></Box>
+                <Box height='80px'></Box>
+
+                <Box height='80px'>
+                    <Heading 
+                        color='blue'>
+                        LabeX
+                    </Heading>
+                </Box>
+               
+                <Box height='80px'>
+                    <Button 
+                        mr='10'
+                        colorScheme='blue'
+                        size='sm' 
+                        variant='solid' 
+                        onClick={goToLogin} >Área administrativa</Button>
+                    <Button 
+                        colorScheme='blue'
+                        size='sm' 
+                        variant='solid' 
+                        onClick={goToListTrips} >Lista de viagens</Button>
+                </Box>
+            </SimpleGrid>
+            
+            
+            
+
+                    
+
+       </ContainerHome> 
     )
 }

@@ -3,7 +3,7 @@ import { BASE_URL } from "../../constantes/url"
 import useRequestData from "../../hook/UseRequestData"
 import { AplicationForm } from "../AplicationForm/AplicationForm"
 import { ContainerT, ContainerTrips } from "./style"
-
+import { Box, SimpleGrid, Button, Heading, CheckCircleIcon } from '@chakra-ui/react'
 
 export function ListTrip(){
 
@@ -22,28 +22,52 @@ export function ListTrip(){
         return(
           <ContainerTrips key={trip.id}>
             <li>
-                <h4>Nome: {trip.name}</h4>
-                <p>Descrição: {trip.description}</p>
-                <p>{trip.planet}</p>
-                <p>{trip.durationInDays}</p>
-                <p>{trip.date}</p>
+                <h2>{trip.name}</h2>
+                <p>{trip.description}</p>
+                <p>{trip.planet}  |  {trip.durationInDays}  |  {trip.date}</p>
+                <Button 
+                    mt='4'
+                    colorScheme='blue'
+                    size='sm' 
+                    variant='solid' 
+                    onClick={goToAplicationForm} >Viajar</Button>
             </li>
           </ContainerTrips>
+         
         )
       })
 
     return(
         <>
-        <h1>Lista de viagens</h1>
-        <button onClick={goToLastPage} >Voltar</button>
-        <button onClick={goToAplicationForm} >VIAJAR</button>
+
+
+        <Heading 
+            mt='10'
+            mb='5'
+            color='blue'>
+            Lista de viagens
+        </Heading>
+
+        <Button 
+            mr='10'
+            colorScheme='blue'
+            size='sm' 
+            variant='solid' 
+            onClick={goToLastPage} >Voltar</Button>
+        <Button 
+            colorScheme='blue'
+            size='sm' 
+            variant='solid' 
+            onClick={goToAplicationForm} >Viajar</Button>
 
         <ContainerT>
             <main>
+         
             {isLoading&&"carregando..."}
             {!isLoading&&dataTrips&&listTrips}
             {!isLoading&&dataTrips&&error}
             {listTrips}
+
             </main>
         </ContainerT>
      

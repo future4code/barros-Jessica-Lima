@@ -16,7 +16,7 @@ export function Router(){
                 <Route path="aplication-form" element={<AplicationForm/>} />
                 <Route path="login" element={<Login/>} />
                 <Route path="admin-home" element={<AdminHome/>} />
-                <Route path="trip-details" element={<TripDetails/>} />
+                <Route path="trip-details/:id" element={<TripDetails/>} />
                 <Route path="create-trip" element={<CreateTrip/>} />
             </Routes>
         </BrowserRouter>

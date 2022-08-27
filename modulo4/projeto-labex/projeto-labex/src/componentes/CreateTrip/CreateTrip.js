@@ -4,6 +4,7 @@ import { ContainerForm } from "./style"
 import axios from "axios"
 import { BASE_URL } from "../../constantes/url"
 import { useProtectPage } from "../../hook/UseProtectPage"
+import { Heading, Button } from '@chakra-ui/react'
 
 export function CreateTrip(){
     useProtectPage();
@@ -47,8 +48,14 @@ export function CreateTrip(){
 
     return(
         <>
-            <h1>Criar viagem</h1>
-            <button onClick={goToLastPage} >Voltar</button>
+            <Heading 
+                mt='10'
+                mb='5'
+                color='blue'>
+                    Criar viagem
+            </Heading>
+            
+
             <ContainerForm>
                 <form onSubmit={createTrip}>
                             <label htmlFor="name">Nome</label>
@@ -115,6 +122,13 @@ export function CreateTrip(){
 
                 </form>
             </ContainerForm>
+
+            <Button 
+                    mt='4'
+                    colorScheme='blue'
+                    size='sm' 
+                    variant='solid' 
+                    onClick={goToLastPage} >Voltar</Button>
         </>
     )
 }

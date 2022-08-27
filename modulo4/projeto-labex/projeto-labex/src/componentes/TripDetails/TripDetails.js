@@ -5,96 +5,121 @@ import { BASE_URL } from "../../constantes/url"
 import { useProtectPage } from "../../hook/UseProtectPage"
 import useRequestData from "../../hook/UseRequestData"
 import { ContainerC, ContainerCandidate } from "./style";
+import { Heading, Button } from '@chakra-ui/react'
 
 export function TripDetails(){
     useProtectPage();
     const navigate = useNavigate()
-    const { tripId } = useParams()
 
     const [trip, setTrip] = useState()
-    const getTripDetails = () =>{
-        axios.get(`${BASE_URL}trip/${tripId}`,{
-            headers:{
-                auth: localStorage.getItem("token")
-            }
-        }).then((response)=>{setTrip(response.data.trip)
-        }).catch((erro)=>{ console.log(erro)})
-    }
-
-    useEffect(()=>{
-        getTripDetails()
-    },[])
-
-    
-    const [data] = useRequestData(`${BASE_URL}trip/NoIFVcOiSgTKTIPVZwXS`,
-    {headers:{
-        auth: localStorage.getItem("token")
-    }})
-
+    const {id} = useParams()
+    console.log(id)
     const goToLastPage = () =>{
         navigate(-1)
     }
+    useProtectPage()
 
-    // put
-    const aprovCandidato = (id) =>{
-        const body = {
-            "approve": true
-        }
-        axios.put(`${BASE_URL}trips/${tripId}/candidates/${id}/decide`, body,{
-            headers: {
-                auth: localStorage.getItem("token")
-            }
-        }.then((response) =>{ alert("Candidato aprovado!"); console.log(response.data.trip) })
-        .catch((erro)=>{ alert("Erro!") })
-        )
+    const getTripDetails = () =>{
+        axios
+            .get(`${BASE_URL}trip/${id}`,{
+                headers:{
+                    auth: localStorage.getItem("token")
+                }
+            })
+            .then((response)=>{setTrip(response.data.trip)})
+            .catch((erro)=>{console.log(erro)})
     }
 
-    const reprovCandidato = (id) =>{
-        const body = {
-            "approve": false
+    console.log(trip)
+
+    useEffect(() =>{
+        getTripDetails()
+    }, [])
+
+    const decideCandidate = (approve, candidatesId) =>{
+        const body={
+            approve: approve
         }
-        axios.put(`${BASE_URL}trips/${tripId}/candidates/${id}/decide`, body,{
+        axios.put(`${BASE_URL}trips/${id}/candidates/${candidatesId}/decide`, body, {
             headers: {
                 auth: localStorage.getItem("token")
             }
-        }.then((response) =>{ alert("Candidato reprovado!"); console.log(response.data.trip) })
-        .catch((erro)=>{ alert("Erro!") })
-        )
-    }   
- 
-    return(
-        <>
-            <h1>Viagem</h1>
-            {trip && trip.trips && trip.trips.map((trip)=>{
-                return(
-                    <div>
-                        <h4>{trip.name}</h4>
-                        <p>teste</p>
-                    </div>
-                )
+        })
+        .then((response)=>{ console.log(response.data.trip) })
+        .catch((erro)=>{console.log(erro)}) 
+    }
+
+    const aprovarCandidato = () => {
+        decideCandidate(true, trip.candidates.id)
+      };
     
-            })}
+      const rejeitarCandidato = () => {
+        decideCandidate(false, trip.candidates.id)
+      };
 
-            <button onClick={goToLastPage} >Voltar</button>
 
-            <h1>Candidatos</h1>
+    return(
+        <>  
+
+        <Heading 
+                mt='10'
+                color='blue'>
+                    Detalhes
+            </Heading>
+
+        <ContainerC>
+            <main>
+                
+                        <div>
+                            <h4>Nome: {trip && trip.name}</h4>
+                            <p>Planeta: {trip && trip.planet}</p>
+                            <p>Data: {trip && trip.date}</p>
+                            <p>Duração: {trip && trip.durationInDays}</p>
+                            <p>{trip && trip.description}</p>
+                        </div>
+               
+                </main>
+            </ContainerC>
+            <Button 
+                    mt='4'
+                    colorScheme='blue'
+                    size='sm' 
+                    variant='solid' 
+                    onClick={goToLastPage} >Voltar</Button>
+
+            <Heading 
+                mt='10'
+                color='blue'>
+                    Candidatos
+            </Heading>
             <ContainerC>
                 <main>
-                    {data && data.trip.candidates && data.trip.candidates.map((i)=>{
+                    {trip && trip.candidates && trip.candidates.map((trip)=>{
                         return(
-                            <ContainerCandidate key={i.id}>
+                            <ContainerCandidate key={trip.id}>
                                 <li>
-                                    <h2>Candidato</h2>
-                                    <p>{i.name}</p>
-                                    <p>{i.age}</p>
-                                    <p>{i.profession}</p>
-                                    <p>{i.applicationText}</p>
-                                    <button onClick={aprovCandidato}>Aprovar</button>
-                                    <button onClick={reprovCandidato}>Reprovar</button>
+                                    <p>{trip.name}</p>
+                                    <p>{trip.age}</p>
+                                    <p>{trip.profession}</p>
+                                    <p>{trip.applicationText}</p>
+                                    <Button 
+                                        mr='5'
+                                        mt='4'
+                                        colorScheme='green'
+                                        size='sm' 
+                                        variant='solid' 
+                                        onClick={()=>aprovarCandidato()} >Aprovar</Button>
+                                    <Button 
+                                        mt='4'
+                                        colorScheme='red'
+                                        size='sm' 
+                                        variant='solid' 
+                                        onClick={()=>rejeitarCandidato()} >Reprovar</Button>
                                 </li>
                             </ContainerCandidate>
-                    )
-                    })}
+                        )
+                    })
+                    }
                 </main>
             </ContainerC>
         </>

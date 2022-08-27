@@ -13,28 +13,19 @@ export const GlobalStyle = createGlobalStyle`
     body{
         background: var(--soft-white);
     }
+    
+    video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        width: 100%;
+    }
 
  
     h1{
         padding-top: 20px;
         color: #03bb85;
-    }
-
-    button{
-        padding: 8px 20px;
-        border-style: none;
-        background-color: gray;
-        font-weight: 600;
-        border-radius: 5px;
-        color: white;
-        margin: 5px;
-        margin-top: 20px;
-
-    }
-
-    button:hover{
-        background-color: #03bb85;
-        
     }
 
     input{
