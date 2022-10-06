@@ -1,23 +1,20 @@
-// exercicio 1
 
-const celsius = 20
-const converter = "f"
 
 const converteTemperatura = (celsius, converter) =>{
     
-    const k = celsius - 273
-    const f = 1.8 * celsius + 32
+    const K = celsius + 273.15
+    const F = 1.8 * celsius + 32
 
     if (typeof celsius ==! "number"){
         return("Celsius deve ser um número")
     }else{
 
         switch (converter) {
-            case "f":
-                return `${celsius}ºC equivale a ${f}º Fahrenheit`
+            case "F":
+                return `${celsius}ºC equivale a ${F}º Fahrenheit`
             break;
-            case "k":
-            return `${celsius}ºC equivale a ${k}º Kelvin`
+            case "K":
+            return `${celsius}ºC equivale a ${K}º Kelvin`
             break;
         default:
             return "Escala inválida (deve ser K ou F)"
@@ -25,5 +22,5 @@ const converteTemperatura = (celsius, converter) =>{
     }
     
 }
-console.log(converteTemperatura)
+console.log(converteTemperatura(30, "K"))
 
