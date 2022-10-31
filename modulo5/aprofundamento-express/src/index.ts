@@ -20,7 +20,8 @@ app.get("/tarefas/:id", (req: Request, res: Response) => {
     res.status(201).send(statusTarefas(false))
 })
 */
-// 5 - criação de tarefa ---------------------------- FUNCIONANDO
+
+// ---------------------5 criação de tarefa ------------------- FUNCIONANDO
 app.post("/addtarefa", (req: Request, res: Response) => {  
     
     const tarefaNova = req.body.title
@@ -43,46 +44,32 @@ app.post("/addtarefa", (req: Request, res: Response) => {
     res.status(201).send({arrayDados})
 })
 
-// 6 - edição de status
-/*
-app.put("/tarefas/:userId/alterarStatus", (req: Request, res: Response) => {  
+// 6 ----------------------- 6 edição de status --------------------- FUNCIONANDO
+app.put("/tarefas/alterarStatus", (req: Request, res: Response) => {  
 
-    const tarefasId = req.params.userId
-    const idTarefaAlterar = 2 //arrumar isso
-    const {userId, id, title, completed} = req.body
+    const idUser = req.headers.authorization
+    const idTarefa = req.body.title
 
-    // tratamento de erro
-    if( !tarefasId || !idTarefaAlterar || !userId || !id || !title || !completed ) {
+    if( !idUser || !idTarefa) {
         res.status(400).send('Deu ruim, passe os parametros')
     }
-    // procurar tarefa a alterar
-    const selecTarefa = arrayDados.find((tarefa)=>{
-        return tarefa.userId === idTarefaAlterar
+
+    const buscaId = arrayDados.filter((user)=>{
+        if(idUser === user.userId){
+            return idUser
+        }
     })
-
-    let tarefasSelecionadas
-
-    // verifica se a tarefa existe 
-    if(selecTarefa){
-        tarefasSelecionadas = selecTarefa.find((tarefa)=>{
-            return tarefa.userId === tarefasId
+    const alterarStatus = buscaId.map((status)=>{
+        status.tarefas.map((s)=>{
+            if(idTarefa === s.title){
+            s.completed = !s.completed
+        }
         })
-    }else{
-        res.status(400).send('Tarefa não encontrada')
-    }
-
-    if(){
-
-    }else{
-        res.status(400).send('Tarefa não encontrada')
-    }
-
-
+    })
     // resposta do servidor
-    res.status(201).send('bananinha')
-
+    res.status(201).send(arrayDados)
 })
-*/
+
 
 // 7 - deletar tarefa
 /*
