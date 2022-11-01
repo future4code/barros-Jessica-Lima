@@ -6,20 +6,27 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-// 4 - retornar afazeres de único status
-/*
-app.get("/tarefas/:id", (req: Request, res: Response) => {  
 
-    function statusTarefas(status:boolean){
+// ------------------- 4 - retornar afazeres de único status
+app.get("/tarefas", (req: Request, res: Response) => {  
 
-        const statusT = arrayDados.filter((s)=>{
-            return s.completed == status
-        })
-        return statusT
+    const statusId = req.body.statusId
+    
+    if( !statusId ){
+        res.status(400).send('Deu ruim, verificar informações')
     }
-    res.status(201).send(statusTarefas(false))
+
+    let status = arrayDados.map((s)=>{
+        return s.tarefas
+ 
+    }).flat(1)
+    
+    status = status.filter((tarefa)=>{
+        return tarefa.completed === statusId 
+    }) 
+    
+   res.status(201).send(status)
 })
-*/
 
 // ---------------------5 criação de tarefa ------------------- FUNCIONANDO
 app.post("/addtarefa", (req: Request, res: Response) => {  
@@ -70,25 +77,51 @@ app.put("/tarefas/alterarStatus", (req: Request, res: Response) => {
     res.status(201).send(arrayDados)
 })
 
-
-// 7 - deletar tarefa
+// ---------------------- 7 deletar tarefa ---------------------------
 /*
 app.delete('/tarefas/delete',(req: Request, res: Response)=>{
-    const idTarefa = req.query.tarefaId
-    const userId = req.headers.iduser
+  
+    const userId = req.headers.authorization
+    const idTarefa = req.body.tarefaId
 
     if(!idTarefa && !userId){
         res.status(400).send('Deu ruim, adicionar id')
     }
 
-    const tarefasFiltradas = arrayDados.find((user)=>{
-        return user.userId === userId
+    const buscaId = arrayDados.filter((user)=>{
+        if(userId === user.userId){
+            return userId
+        }
     })
-    
- 
+    const deleteTarefa = buscaId.map((tarefa)=>{
+        res.status(200).send(deleteTarefa)
+    })
+
+    res.status(201).send(arrayDados)
+})
+
+*/
+// ---------------------- 8 retorna tarefas de id  ---------------------------
+app.get('/tarefas/id',(req: Request, res: Response)=>{
+
+    const idUser = req.headers.authorization
+
+    if(!idUser ){
+        res.status(400).send('Deu ruim, informar id')
+    }
+
+    const tarefasId = arrayDados.filter((t)=>{
+        if(idUser === t.userId){
+            return t.tarefas
+        }else{
+            res.status(400).send('Usuário inválido')
+        }
+    })
+    res.status(201).send(tarefasId)
+    console.log(tarefasId)
 
 })
-*/
+
 
 app.listen(3003,()=>{
     console.log('Servidor executando na porta 3003')
