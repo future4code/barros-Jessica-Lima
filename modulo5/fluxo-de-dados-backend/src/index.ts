@@ -40,7 +40,7 @@ app.post('/novoProduto', (res: Response, req: Request) => {
             price: price
         })
        
-        res.status(201).send(addProduto)
+        res.status(201).send(produtos)
 
     }catch(erro:any){
         res.status(400).send(erro.message)
@@ -129,7 +129,62 @@ app.delete('/produtos/deletar',(req: Request, res: Response)=>{
         res.status(400).send(erro.message)
     }
 })
+// ---------------------- 8 ---------------------- 
 
+
+// ---------------------- 9 ---------------------- (OK)
+app.put("/produtos/editarProduto", (req: Request, res: Response) => {  
+
+    const idProduto = req.headers.authorization
+    const valor = req.body.price
+
+    try{
+        if( !idProduto) {   
+            const erro=new Error("ID do produto não informado!");
+            erro.name="IDNãoInformado";
+            
+            throw erro;
+        }
+        if( !valor) {
+            const erro=new Error("Valor do produto não informado!");
+            erro.name="valorNãoInformado";
+            
+            throw erro;
+        }
+        if( isNaN(valor) ) {
+            const erro=new Error("Valor não é um número");
+            erro.name="valorInválido";
+            
+            throw erro;
+        }
+        if( valor == 0 || valor < 0 ) {
+            const erro=new Error("O valor não pode ser igual ou menor que zero");
+            erro.name="valorInválido";
+            
+            throw erro;
+        }
+        
+        const buscaId = produtos.filter((p)=>{
+            if(idProduto === p.id){
+                p.price = valor
+            }
+        })
+        
+        if( !buscaId ){
+            const erro=new Error("Produto não existe");
+            erro.name="AuthotizationError";
+            
+            throw erro;
+        }else{
+            res.status(201).send(produtos)
+        }
+
+        
+    }catch(e:any){
+        res.status(400).send(e.message)
+}
+})
+// ---------------------- 10 ---------------------- 
 
 
 
