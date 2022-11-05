@@ -53,9 +53,74 @@ app.get('/users/name',(req: Request, res: Response)=>{
     let errorCode = 400
 
     try{
+        const userName = req.headers.name as string
+
+        if(!userName){
+            errorCode = 401
+            throw new Error ('Nome não encontrado')
+        }
+
+        const buscarNome = users.find((user)=>{
+            if(userName.toLowerCase() === user.name.toLowerCase()){
+                return userName
+            }    
+        })
+
+        if(!buscarNome){
+            errorCode = 404 
+            throw new Error("Usuário não encontrado"); 
+        }
+        res.status(200).send(buscarNome)
+
 
     }catch(err:any){
         res.status(errorCode).send(err.message)
+    }
+})
+// ------------------ EXERCÍCIO 4 ------------------------
+// o metodo PUT também pode ser usado, porém é mais indicado para
+// edição de um dado que já existe no banco, não para adicionar um novo
+app.post('/users/adduser',(req: Request, res: Response)=>{
+    let errorCode = 400
+
+    try{
+        const {id, name, email, type, age} = req.body
+
+        if(!id){
+            errorCode = 404 
+            throw new Error("Id não informado"); 
+        }
+        if(!name){
+            errorCode = 404 
+            throw new Error("Nome não informado"); 
+        }
+        if(!email){
+            errorCode = 404 
+            throw new Error("Email não informado"); 
+        }
+        if(!type){
+            errorCode = 404 
+            throw new Error("Tipo não informado"); 
+        }
+        if(!age){
+            errorCode = 404 
+            throw new Error("Idade não informado"); 
+        }
+        let addUser = users
+        addUser.push({
+            id: id,
+            name: name,
+            email: email,
+            type: type,
+            age: age
+        })
+
+        res.status(200).send(users)
+
+
+    }catch(err:any){
+        res.status(errorCode).send(err.message)
+
     }
 })
 
