@@ -1,0 +1,27 @@
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "Jess",
+    "email": "jess@email.com",
+    "password": "23432535"
+}
+
+### 
+GET http://localhost:3003/user
+Content-Type: application/json
+
+###
+POST http://localhost:3003/movie/create
+Content-Type: application/json
+
+{
+    "title": "Shrek 2", 
+    "description": "Shrek e Fiona acabaram de voltar da lua de mel e vivem felizes em sua casa no pântano. O casal recebe um convite dos pais da princesa, que querem conhecer o novo genro, para um jantar no castelo. Eles ficaram sabendo que Fiona havia se casado com o seu verdadeiro amor, mas o que eles ainda não sabem é que este amor é um ogro mal-educado de mais de 300 quilos, que conta com um burro falante como melhor amigo.", 
+    "duration_in_minutes": 90, 
+    "year_of_release": 2004
+}
+
+### 
+GET http://localhost:3003/movie
+Content-Type: application/json
