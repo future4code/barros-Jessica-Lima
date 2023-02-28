@@ -1,0 +1,27 @@
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "teste",
+    "email": "email@email.com",
+    "password": "23432535"
+}
+
+### 
+GET http://localhost:3003/user
+Content-Type: application/json
+
+###
+POST http://localhost:3003/movie/create
+Content-Type: application/json
+
+{
+    "title": "Bohemian Rhapsody", 
+    "description": "Freddie Mercury, Brian May, Roger Taylor e John Deacon formam a banda de rock Queen em 1970. Quando o estilo de vida agitado de Mercury começa a sair de controle, o grupo precisa encontrar uma forma de lidar com o sucesso e os excessos de seu líder.", 
+    "duration_in_minutes": 129, 
+    "year_of_release": 2018
+}
+
+### 
+GET http://localhost:3003/movie
+Content-Type: application/json
